@@ -25,6 +25,36 @@ namespace NguyenTienDuongBTH02.Controllers
                           View(await _context.Employee.ToListAsync()) :
                           Problem("Entity set 'MvcMovieContext.Employee'  is null.");
         }
+public async Task<IActionResult> Upload()
+{
+    return View();
+}
+[HttpPost] 
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Upload(IFormFile file)
+{
+    if (file!=null)
+    {
+        string fielExtension = Path.GetExtension(file.FileName);
+        if (fielExtension != ".xls" && fielExtension != ".xlsx")
+        {
+            ModelState.AddModelError("", "Please choose exel file to upload!");
+        }
+        else
+        {
+            // rename file wwhen upload to server
+            var fileName = DateTime.Now.ToShortTimeString() + fielExtension;
+            var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Upload/Excels", fileName);
+            var fileLocation = new FileInfo(filePath).ToString();
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+        }
+    }
+    return View();
+}
+
 
         // GET: Employee/Details/5
         public async Task<IActionResult> Details(string id)
@@ -35,7 +65,7 @@ namespace NguyenTienDuongBTH02.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.EmployeeID == id);
+                .FirstOrDefaultAsync(m => m.EmpID == id);
             if (employee == null)
             {
                 return NotFound();
@@ -55,7 +85,7 @@ namespace NguyenTienDuongBTH02.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeID,EmployeeName")] Employee employee)
+        public async Task<IActionResult> Create([Bind("EmpID,EmpName,Address")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -87,9 +117,9 @@ namespace NguyenTienDuongBTH02.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("EmployeeID,EmployeeName")] Employee employee)
+        public async Task<IActionResult> Edit(string id, [Bind("EmpID,EmpName,Address")] Employee employee)
         {
-            if (id != employee.EmployeeID)
+            if (id != employee.EmpID)
             {
                 return NotFound();
             }
@@ -103,7 +133,7 @@ namespace NguyenTienDuongBTH02.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.EmployeeID))
+                    if (!EmployeeExists(employee.EmpID))
                     {
                         return NotFound();
                     }
@@ -126,7 +156,7 @@ namespace NguyenTienDuongBTH02.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.EmployeeID == id);
+                .FirstOrDefaultAsync(m => m.EmpID == id);
             if (employee == null)
             {
                 return NotFound();
@@ -156,7 +186,7 @@ namespace NguyenTienDuongBTH02.Controllers
 
         private bool EmployeeExists(string id)
         {
-          return (_context.Employee?.Any(e => e.EmployeeID == id)).GetValueOrDefault();
+          return (_context.Employee?.Any(e => e.EmpID == id)).GetValueOrDefault();
         }
     }
 }

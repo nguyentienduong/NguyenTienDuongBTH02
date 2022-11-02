@@ -16313,6 +16313,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\deskop\\NguyenTienDuongBTH02\\NguyenTienDuongBTH2\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "NguyenTienDuongBTH2\\Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\deskop\\NguyenTienDuongBTH02\\Views\\Student\\Index.cshtml",
       "TargetPath": "Views\\Student\\Index.cshtml",
       "FileKind": "mvc"
@@ -16333,8 +16338,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\deskop\\NguyenTienDuongBTH02\\NguyenTienDuongBTH2\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "NguyenTienDuongBTH2\\Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\deskop\\NguyenTienDuongBTH02\\Views\\Customer\\Index.cshtml",
       "TargetPath": "Views\\Customer\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\deskop\\NguyenTienDuongBTH02\\NguyenTienDuongBTH2\\Views\\Home\\Index.cshtml",
+      "TargetPath": "NguyenTienDuongBTH2\\Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16358,6 +16373,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\deskop\\NguyenTienDuongBTH02\\NguyenTienDuongBTH2\\Views\\_ViewImports.cshtml",
+      "TargetPath": "NguyenTienDuongBTH2\\Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\deskop\\NguyenTienDuongBTH02\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -16365,6 +16385,21 @@
     {
       "FilePath": "d:\\deskop\\NguyenTienDuongBTH02\\Views\\Person\\Details.cshtml",
       "TargetPath": "Views\\Person\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\deskop\\NguyenTienDuongBTH02\\NguyenTienDuongBTH2\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "NguyenTienDuongBTH2\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\deskop\\NguyenTienDuongBTH02\\NguyenTienDuongBTH2\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "NguyenTienDuongBTH2\\Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\deskop\\NguyenTienDuongBTH02\\NguyenTienDuongBTH2\\Views\\_ViewStart.cshtml",
+      "TargetPath": "NguyenTienDuongBTH2\\Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
